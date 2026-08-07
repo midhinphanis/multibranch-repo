@@ -6,7 +6,7 @@ pipeline{
     }
     stages{
 
-        stage("watching"){
+        stage('watching'){
         when{
             allOf{
                 expression { env.NAME == "Midhin"}
