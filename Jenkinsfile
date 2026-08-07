@@ -15,10 +15,11 @@ pipeline{
             anyOf{
                 expression { env.NAME == "Midhin"}
             }
-            steps{
+            
+        }
+        steps{
                 echo "${env.NAME} is watching ${env.MOVIE} "
             }
-        }
         }
     
     }
