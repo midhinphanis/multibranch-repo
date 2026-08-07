@@ -8,9 +8,13 @@ pipeline {
 
     stages {
         stage('sport') {
+
+            environment{
+                NAME = "kartheek"
+            }
             when{
                 expression{
-                    env.NAME = "midhin"
+                    env.NAME == "midhin"
                 }
                 
             }
