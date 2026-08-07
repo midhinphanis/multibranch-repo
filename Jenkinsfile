@@ -9,9 +9,9 @@ pipeline{
         stage('play')
         {
             when{
-                allOf{
+                anyOf{
                     expression { env.NAME == "midhin" }
-                    expression { env.SPORT == "Football" } 
+                    expression { env.SPORT == "Cricket" } 
                 }
             }
             steps{
