@@ -1,24 +1,25 @@
 pipeline{
-    agent {
-        label 'my-slave'
-    }
+    agent any 
     environment{
-        NAME = "midhin"
-        SPORT = "Football"
+        NAME = "Midhin"
+        MOVIE = "Spiderman"
     }
-
     stages{
-        stage('play')
-        {
-            when{
-                anyOf{
-                    expression { env.NAME == "midhin" }
-                    expression { env.SPORT == "Cricket" } 
-                }
+
+        stage("watching"){
+        when{
+            allOf{
+                expression { env.NAME == "Midhin"}
+                expression { env.MOVIE == "Spiderman"}
+            }
+            anyOf{
+                expression { env.NAME == "Midhin"}
             }
             steps{
-            echo "${env.NAME} is playing ${env.SPORT}"
+                echo "${env.NAME} is watching ${env.MOVIE} "
             }
         }
+        }
+    
     }
 }
