@@ -1,18 +1,16 @@
 pipeline {
     agent any
 
-    stages {
-        stage('course') {
-            steps {
-                script {
-                    def course = "K8S"
+    environment {
+        NAME = "midhin"
+        GAME = "cricket"
+    }
 
-                    if (course == "K8S") {
-                        echo "This course is ${course}"
-                    } else {
-                        echo "This course is not ${course}"
-                    }
-                }
+    stages {
+        stage('sport') {
+            steps {
+                echo "The player is ${env.NAME}"
+                echo "He  plays ${env.GAME}"
             }
         }
     }
