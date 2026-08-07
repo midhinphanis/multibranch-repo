@@ -8,6 +8,12 @@ pipeline {
 
     stages {
         stage('sport') {
+            when{
+                expression{
+                    env.NAME = "midhin"
+                }
+                
+            }
             steps {
                 echo "The player is ${env.NAME}"
                 echo "He  plays ${env.GAME}"
