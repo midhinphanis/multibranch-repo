@@ -1,5 +1,7 @@
 pipeline{
-    agent any
+    agent {
+        label 'my-slave'
+    }
     environment{
         NAME = "midhin"
         SPORT = "Football"
