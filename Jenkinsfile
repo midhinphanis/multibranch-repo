@@ -1,26 +1,21 @@
-pipeline {
+pipeline{
     agent any
-
-    environment {
+    environment{
         NAME = "midhin"
-        GAME = "cricket"
+        SPORT = "Football"
     }
 
-    stages {
-        stage('sport') {
-
-            environment{
-                NAME = "kartheek"
-            }
+    stages{
+        stage('play')
+        {
             when{
-                expression{
-                    env.NAME == "midhin"
+                allOf{
+                    expression { env.NAME == "midhin" }
+                    expression { env.SPORT == "Football" } 
                 }
-                
             }
-            steps {
-                echo "The player is ${env.NAME}"
-                echo "He  plays ${env.GAME}"
+            steps{
+            echo "${env.NAME} is playing ${env.SPORT}"
             }
         }
     }
